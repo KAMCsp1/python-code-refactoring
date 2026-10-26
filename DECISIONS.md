@@ -1,0 +1,7 @@
+# Design Decisions
+
+When I first opened the script, I had to read every function line by line just to figure out what it did. Names like `do_math_stuff` and `list1` didn't help at all. So most of my renaming came from that experience: I wanted someone else to understand the code from the names alone. `process_numbers` and `format_words_by_length` say what each function is actually for, and `numbers` and `fruits` say what the lists contain. I also dropped "list" from the parameter names, since it doesn't add anything and wouldn't even be true if someone passed in a tuple.
+
+For the number function, a list comprehension was an easy choice because the loop was only there to build a new list. The string function took me a bit longer to think about. The original added a space after each word and then used `strip()` to clean up the last one, which works but felt like patching a problem the code created itself. Using `" ".join(...)` fixed that, since it only puts spaces between the words. I did think about squeezing everything into one-liners, but I decided against it where it made the code harder to read.
+
+I think the biggest improvement for maintenance is that the rules are now written down. The docstrings explain what each function does, and the numbers 2, 3 and the word-length limit are constants at the top of the file instead of being buried in the code. If the rules ever change, it's a one-line edit. I made sure to run the program after every change to check the output stayed exactly the same, because that was the one thing I couldn't break.
