@@ -1,9 +1,3 @@
-"""Process a list of numbers and a list of words, then print the results.
-
-Even numbers are doubled and odd numbers are tripled. Words with six or
-more letters are made uppercase and shorter words are made lowercase.
-"""
-
 # The rules are stored here so they can be changed in one place.
 EVEN_MULTIPLIER = 2
 ODD_MULTIPLIER = 3
